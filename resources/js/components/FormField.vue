@@ -21,6 +21,9 @@ import { FormField, HandlesValidationErrors } from 'laravel-nova'
 import CKEditor from '@ckeditor/ckeditor5-vue'
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import NovaCKEditor5UploadAdapter from '../ckeditor5/upload-adapter'
+import '@ckeditor/ckeditor5-build-classic/build/translations/ru.js'
+
+
 
 export default {
     mixins: [FormField, HandlesValidationErrors],
@@ -34,6 +37,7 @@ export default {
     data () {
         return {
             editor: ClassicEditor,
+
             defaultEditorConfig: {
                 nova: {
                     resourceName: this.resourceName,
@@ -50,7 +54,8 @@ export default {
                 },
                 extraPlugins: [
                     this.createUploadAdapterPlugin
-                ]
+                ],
+                language: 'ru'
             }
         }
     },
